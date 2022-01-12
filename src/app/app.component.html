@@ -4,6 +4,14 @@
 <div *ngIf="title === 'platzi'">
   Esto es un div
 </div>
+
+<div [ngSwitch]="title">
+<div *ngSwitchCase="'platzi'">Esto es platzi</div>
+<div *ngSwitchCase="'angular'">Esto es angular</div>
+<div *ngSwitchCase="'ionic'">Esto es ionic</div>
+<div *ngSwitchDefault>Esto no hace match</div>
+</div>
+
 <button (click)="addItems()">Add Item</button>
 
 <ul>
@@ -12,5 +20,6 @@
       {{item}} {{i}}
       <button (click)="deleteItems(i)">Delet Item</button>
   </li>
-
+  <li *ngFor="let product of products ">
+    <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>  </li>
 </ul>
