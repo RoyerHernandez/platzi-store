@@ -10,6 +10,8 @@ export class AppComponent {
   title = 'platzi-store';
   items = ['tenis', 'camisas', 'camisetas'];
 
+  power = 10;
+
   products: Product[] = [
     {id: '1',
      image: 'assets/images/camiseta.png',
@@ -52,6 +54,7 @@ export class AppComponent {
   addItems(){
     this.items.push('nuevo');
   }
+  
   deleteItems(index : number){
     this.items.splice(index, 1);
   }

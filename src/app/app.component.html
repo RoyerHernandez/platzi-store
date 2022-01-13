@@ -1,6 +1,9 @@
 <input type="text" [(ngModel)]="title">
 {{ title }}
 
+<input type="text" [(ngModel)]="power">
+{{ power | exponential}}
+
 <div *ngIf="title === 'platzi'">
   Esto es un div
 </div>
@@ -14,12 +17,19 @@
 
 <button (click)="addItems()">Add Item</button>
 
-<ul>
-  <li *ngIf="items.length === 0">La lista esta vacia</li>
+<li *ngIf="items.length === 0">La lista esta vacia</li>
+
+<ul>  
   <li *ngFor="let item of items; index as i">
       {{item}} {{i}}
       <button (click)="deleteItems(i)">Delet Item</button>
-  </li>
-  <li *ngFor="let product of products ">
-    <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>  </li>
+  </li>  
 </ul>
+
+<div class="product-grid">
+  <app-product 
+   *ngFor="let product of products "
+   (productClicked)="clickProduct($event)" 
+   [product]="product">
+  </app-product> 
+</div>

@@ -1,5 +1,9 @@
-<h3>{{product.title}} </h3>    
+<h3 appHighlight>{{product.title}} </h3>  
+<div class="product-content">
 <img [src]="product.image"> 
-<strong>{{product.price}} </strong>
-<button (click)="addCar()">Añadir al carrito</button>
-    
+<div class="description">{{product.description}}</div>
+</div>  
+<div class="product-price">
+    <div><strong>{{product.price | currency}} </strong></div>
+    <div><button (click)="addCar()">Añadir al carrito</button></div>
+</div>
