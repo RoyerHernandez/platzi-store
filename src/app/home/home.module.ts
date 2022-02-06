@@ -5,7 +5,8 @@ import { BannerComponent } from './component/banner/banner.component';
 import {Routes, RouterModule} from '@angular/router';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './component/home/home.component';
-import { SwiperModule } from "swiper/angular";
+import { SwiperModule } from 'swiper/angular';
+import { SharedModule } from '../shared/shared.module';
 
 
 const routes: Routes = [
@@ -18,12 +19,13 @@ const routes: Routes = [
 @NgModule({
     declarations: [
         BannerComponent,
-        HomeComponent
+        HomeComponent,
     ],
     imports: [
         CommonModule,
         HomeRoutingModule,
-        SwiperModule
+        SwiperModule,
+        SharedModule
     ]
 })
 export class HomeModule{
